@@ -14,12 +14,9 @@ this.intervalId=null;
   }
 
   getMinutes() {
-    if(this.currentTime==0){
-      return 0
-    }
-    if(this.currentTime>=60){
+    
 return Math.floor(this.currentTime/60)
-    }
+    
   }
 
   getSeconds() {
@@ -37,6 +34,7 @@ return Math.floor(this.currentTime/60)
 // }
 // return ''+value
 return ('0'+value).slice(-2)
+// return String(value).slice(-2)
   }
 
   stop() {
@@ -50,6 +48,7 @@ return ('0'+value).slice(-2)
   split() {
     let minutes=this.computeTwoDigitNumber(this.getMinutes())
     let seconds=this.computeTwoDigitNumber(this.getSeconds())
+    console.log(minutes,seconds)
     return `${minutes}:${seconds}`
 
   }
